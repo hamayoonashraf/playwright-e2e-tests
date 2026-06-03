@@ -9,13 +9,15 @@ test.describe("Login Functionality", () => {
 
     // 2. click on make appointment
     await page.getByRole("link", { name: "Make Appointment" }).click();
-    await expect(page.getByText("Please login to make")).toBeVisible();
+    await expect(page.getByText("Please login to make appointment.")).toBeVisible();
   });
 
   test("should login successfully", async ({ page }) => {
     // Success Login
     await page.getByLabel("Username").fill("John Doe");
     await page.getByLabel("Password").fill("ThisIsNotAPassword");
+    //await page.pause()
+
     await page.getByRole("button", { name: "Login" }).click();
 
     // Assert a text

@@ -4,8 +4,24 @@
   "description": "Playwright E2E Tests with AI Capabilities incl MCP",
   "main": "index.js",
   "scripts": {
+    "test:api": "npx playwright test --config=config/dev.playwright.config.ts tests/api/users.api.spec.ts",
+    "test:e2e": "npx playwright test --config=config/dev.playwright.config.ts tests/e2e/nopcommerce.e2e.spec.ts --headed",
+    "dev:make-apt": "npx playwright test --config=config/dev.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+    "test:make-apt": "npx playwright test --config=config/test.playwright.config.ts tests/functional/make.aptmnt.spec.ts --headed",
+    "demo:params": "npx playwright test tests/demo/params.make.aptmnt.spec.ts --headed",
+    "demo:csvparams": "npx playwright test tests/demo/csv.params.make.aptmnt.spec.ts --headed",
+    "demo:global": "npx playwright test tests/functional/login.spec.ts",
+    "demo:tag": "npx playwright test --grep @smoke --headed",
+    "pw:basic-cap": "npx playwright test tests/demo/pw.basic.cap.make.aptmnt.spec.ts --headed",
+    "debug:trace": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --trace on",
+    "debug:cli": "set PWDEBUG=1&& npx playwright test tests/demo/debug.make.aptmnt.spec.ts",
+    "debug:ui": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --project=firefox --ui --headed",
+    "debug": "npx playwright test tests/demo/debug.make.aptmnt.spec.ts --project=firefox --headed",
+    "inventory": "npx playwright test tests/functional/inventory.spec.ts --project=firefox --headed",
+    "ele-int": "npx playwright test tests/demo/ele.handling.make.aptmnt.spec.ts --project=firefox --headed",
+    "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
     "login": "npx playwright test tests/functional/login.spec.ts --project=firefox --headed",
-    "demo": "npx playwright test tests/demo/mytest.spec.ts --project=firefox --headed"
+    "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
   },
   "keywords": [
     "playwright",
@@ -16,6 +32,11 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "@types/node": "^25.7.0"
+    "@types/node": "^25.9.1",
+    "allure-playwright": "^3.9.0",
+    "chalk": "^5.6.2",
+    "csv-parse": "^6.2.1",
+    "dotenv": "^17.4.2",
+    "typescript": "^5.5.4"
   }
 }
