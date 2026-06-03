@@ -20,7 +20,7 @@
     "inventory": "npx playwright test tests/functional/inventory.spec.ts --project=firefox --headed",
     "ele-int": "npx playwright test tests/demo/ele.handling.make.aptmnt.spec.ts --project=firefox --headed",
     "make-apt": "npx playwright test tests/functional/make.aptmnt.spec.ts --headed",
-    "login": "npx playwright test tests/functional/login.spec.ts --headed",
+    "login": "npx playwright test tests/functional/login.spec.ts",
     "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
   },
   "keywords": [
